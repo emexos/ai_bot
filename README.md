@@ -1,41 +1,41 @@
 # TwoBlade Chatbot
 
-Ein Node.js-basierter Bot für [TwoBlade](https://twoblade.com), der sich automatisch einloggt, mit dem WebSocket verbindet und auf Nachrichten reagieren kann.
+A Node.js-based bot for [TwoBlade](https://twoblade.com) that logs in automatically, connects to the WebSocket, and reacts to messages.
 
 ## Features
 
-* Automatisches Login mit Cookie-Handling
-* Verbindung zum TwoBlade WebSocket
-* Verarbeitung eingehender Nachrichten
-* Erweiterbar durch eigene KI-Logik (`./ai.js`)
+* Automatic login with cookie handling
+* Connection to the TwoBlade WebSocket
+* Processing of incoming messages
+* Extendable via custom AI logic (`./ai.js`)
 
-## Voraussetzungen
+## Prerequisites
 
-### 1. Node.js installieren
+### 1. Install Node.js
 
-Falls Node.js noch nicht installiert ist:
+If you don't have Node.js installed:
 
 * Windows/macOS/Linux:
-  Besuche [https://nodejs.org/](https://nodejs.org/) und lade die LTS-Version herunter.
+  Visit [https://nodejs.org/](https://nodejs.org/) and download the LTS version.
 
-* Nach der Installation im Terminal prüfen:
+* Verify installation in the terminal:
 
   ```bash
   node -v
   npm -v
   ```
 
-### 2. Abhängigkeiten installieren
+### 2. Install dependencies
 
-Im Projektverzeichnis im Terminal ausführen:
+In the project directory, run:
 
 ```bash
 npm install
 ```
 
-## Konfiguration (.env)
+## Configuration (.env)
 
-Erstelle eine Datei namens `.env` im Projektverzeichnis mit folgendem Inhalt:
+Create a file named `.env` in the project root with the following content:
 
 ```
 CF_CLEARANCE=your_cf_token
@@ -44,37 +44,34 @@ TB_PASSWORD=your_twoblade_account_password
 GEMINI_API_KEY=your_api_key
 ```
 
-### Woher bekommt man die Werte?
+### How to get the values
 
 * `CF_CLEARANCE`:
-  Diesen Cookie erhält man beim Login auf [twoblade.com](https://twoblade.com).
-  In den Entwicklertools des Browsers (F12) unter "Anwendung" > "Cookies" den `cf_clearance`-Wert kopieren.
+  This cookie is obtained when logging into [twoblade.com](https://twoblade.com).
+  Open the browser dev tools (F12), go to "Application" > "Cookies" and copy the value for `cf_clearance`.
 
 * `TB_USERNAME` & `TB_PASSWORD`:
-  Die Login-Daten für das TwoBlade-Konto.
+  Your TwoBlade account login credentials.
 
 * `GEMINI_API_KEY`:
-  Erhältlich über [Google AI](https://makersuite.google.com/app) nach Erstellung eines Projekts.
+  Get it from [Google AI](https://makersuite.google.com/app) after creating a project.
 
 ## Start
 
-Die Datei `index.js` ist bereits enthalten. Um den Bot zu starten:
+The `index.js` file is already included. To start the bot, run:
 
 ```bash
 node index.js
 ```
 
-## Projektstruktur
+## Project Structure
 
 ```
 .
 ├── .env
 ├── bot.js
-├── ai.js         # eigene Logik für KI-Antworten
+├── ai.js         # your custom AI logic
 ├── index.js
 ├── package.json
 ```
 
-## Lizenz
-
-MIT-Lizenz
